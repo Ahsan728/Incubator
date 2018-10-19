@@ -1,0 +1,20 @@
+
+
+void setup() {
+  //start serial connection
+  Serial.begin(9600);
+  //configure pin2 as an input and enable the internal pull-up resistor
+  pinMode(18, OUTPUT);
+  pinMode(19, OUTPUT);
+
+}
+
+void loop() {
+  
+    digitalWrite(18,LOW);//bulb
+
+    digitalWrite(19, LOW);//fan
+  
+}
+
+

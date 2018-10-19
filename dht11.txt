@@ -1,0 +1,34 @@
+
+#include <DHT.h>  
+#define dht_dpin 17  
+#define DHTTYPE DHT11 
+DHT dht(dht_dpin, DHTTYPE);
+
+int humi,tem;
+
+void setup()
+{
+ Serial.begin(9600);
+  dht.begin(); 
+ 
+ Serial.print("   Humidity   ");
+
+ Serial.print("  Measurement ");
+ delay(3000);
+ 
+}
+
+void loop()
+{
+
+  Serial.println("Humidity: ");
+  tem= dht.readTemperature();
+  Serial.print(humi);   // printing Humidity on Serial
+  Serial.print(" %    ");
+  Serial.println("Temperature:");
+  humi= dht.readHumidity();
+  Serial.print(tem);   // Printing temperature on Serial
+  Serial.print("C   ");
+ delay(3000);
+}
+
